@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NotificationPage from "./notification_app_fe/notification_page(stage2)";
 
 function App() {
+  const [page, setPage] = useState("notifications");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: 20 }}>
+      <div style={{ marginBottom: 20 }}>
+        <button onClick={() => setPage("notifications")} style={{ marginRight: 10 }}>
+          Notifications
+        </button>
+
+      </div>
+
+     
+        <NotificationPage />
+      
     </div>
   );
 }
